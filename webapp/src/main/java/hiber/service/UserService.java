@@ -6,7 +6,11 @@ import java.util.List;
 
 public interface UserService {
     void add(User user);
-    List<User> listUsers();
 
-    User getUSerByCar(String model, int series);
+    void update(User user);
+
+    void delete(Long id);
+
+    List<User> getAllUsers();
+
 }

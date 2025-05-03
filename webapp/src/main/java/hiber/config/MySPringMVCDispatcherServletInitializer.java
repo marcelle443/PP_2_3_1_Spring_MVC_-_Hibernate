@@ -1,7 +1,8 @@
-package src.main.java.hiber.config;
+package hiber.config;
 
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
 
 public class MySPringMVCDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

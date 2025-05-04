@@ -9,12 +9,12 @@ public class MySPringMVCDispatcherServletInitializer extends AbstractAnnotationC
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class<?>[]{SpringConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {SpringConfig.class};
+        return null;
     }
 
     @Override

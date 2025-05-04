@@ -13,6 +13,7 @@ public interface UserDao {
 
    void delete(Long id);
 
+   User getUserById(Long id);
 
 }
 

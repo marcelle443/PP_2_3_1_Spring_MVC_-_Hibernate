@@ -1,6 +1,8 @@
 package hiber.model;
 
-import jakarta.persistence.*;
+
+
+import javax.persistence.*;
 
 
 @Entity
@@ -28,6 +30,7 @@ public class User {
       this.lastName = lastName;
       this.email = email;
    }
+
 
    public Long getId() {
       return id;

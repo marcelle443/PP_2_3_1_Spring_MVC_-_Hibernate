@@ -21,8 +21,11 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        return entityManager.createQuery("from User", User.class).getResultList();
+        List<User> users = entityManager.createQuery("from User", User.class).getResultList();
+        System.out.println("Loaded users: " + users);
+        return users;
     }
+
 
     @Override
     public void update(User user) {
@@ -35,6 +38,11 @@ public class UserDaoImp implements UserDao {
         if (user !=null) {
             entityManager.remove(user);
         }
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return entityManager.find(User.class, id);
     }
 
 

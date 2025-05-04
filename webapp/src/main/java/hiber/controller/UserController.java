@@ -33,20 +33,35 @@ public class UserController {
 
     }
 
+    @GetMapping("/add")
+    public String showAddForm() {
+        return "add_user_form";
+    }
+
     @PostMapping("/add")
-    public String addUser(@RequestParam String name,
+    public String addUser(@RequestParam String firstName,
                           @RequestParam String lastName,
                           @RequestParam String email) {
-        User user = new User(name, lastName, email);
+        User user = new User(firstName, lastName, email);
         userService.add(user);
         return "redirect:/users";
     }
 
+    @GetMapping("/edit")
+    public String showEditForm(@RequestParam("id") Long id, ModelMap model) {
+        User user = userService.getUserById(id);
+        model.addAttribute("user", user);
+        return "edit_user_form";
+    }
+
     @PostMapping("/update")
-    public String updateUser(@RequestParam("id") Long id, @RequestParam("name") String name, @RequestParam("lastName") String lastName, @RequestParam("email") String email) {
+    public String updateUser(@RequestParam("id") Long id,
+                             @RequestParam("firstName") String firstName,
+                             @RequestParam("lastName") String lastName,
+                             @RequestParam("email") String email) {
         User user = new User();
         user.setId(id);
-        user.setFirstName(name);
+        user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmail(email);
         userService.update(user);

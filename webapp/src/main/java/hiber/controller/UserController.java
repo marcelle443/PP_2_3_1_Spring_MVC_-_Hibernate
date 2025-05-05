@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/")
 public class UserController {
 
 
@@ -28,8 +28,8 @@ public class UserController {
 
     @GetMapping
     public String getAllUsers(ModelMap model) {
-        model.addAttribute("users", userService.getAllUsers());
-        return "users";
+        model.addAttribute("user", userService.getAllUsers());
+        return "user";
 
     }
 
@@ -44,7 +44,7 @@ public class UserController {
                           @RequestParam String email) {
         User user = new User(firstName, lastName, email);
         userService.add(user);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
     @GetMapping("/edit")
@@ -65,13 +65,13 @@ public class UserController {
         user.setLastName(lastName);
         user.setEmail(email);
         userService.update(user);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
     @PostMapping("/delete")
     public String deleteUser(@RequestParam("id") Long id) {
         userService.delete(id);
-        return "redirect:/users";
+        return "redirect:/";
     }
 
 

@@ -6,7 +6,7 @@
 <body>
 <h2>Редактировать пользователя</h2>
 
-<form action="/users/update" method="post">
+<form action="/update" method="post">
     <input type="hidden" name="id" value="${user.id}">
     Имя: <input type="text" name="firstName" value="${user.firstName}"><br>
     Фамилия: <input type="text" name="lastName" value="${user.lastName}"><br>
@@ -15,6 +15,6 @@
 </form>
 
 <br>
-<a href="/users">Назад к списку</a>
+<a href="/">Назад к списку</a>
 </body>
 </html>

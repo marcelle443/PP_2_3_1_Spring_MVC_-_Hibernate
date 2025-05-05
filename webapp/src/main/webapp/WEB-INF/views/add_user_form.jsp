@@ -6,7 +6,7 @@
 <body>
 <h2>Добавить нового пользователя</h2>
 
-<form action="/users/add" method="post">
+<form action="/add" method="post">
     Имя: <input type="text" name="firstName"><br>
     Фамилия: <input type="text" name="lastName"><br>
     Email: <input type="text" name="email"><br>
@@ -14,6 +14,6 @@
 </form>
 
 <br>
-<a href="/users">Назад к списку</a>
+<a href="/">Назад к списку</a>
 </body>
 </html>

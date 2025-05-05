@@ -20,25 +20,36 @@ public class DataLoader {
     @PostConstruct
     public void dataInit() {
 
-        User user1 = new User();
-        user1.setFirstName("Peter");
-        user1.setLastName("Parker");
-        user1.setEmail("pparker@gmail.com");
 
-        User user2 = new User();
-        user2.setFirstName("Sarah");
-        user2.setLastName("Connor");
-        user2.setEmail("ddayconnor@gmail.com");
+        if (userService.getAllUsers().isEmpty()) {
+            User user1 = new User();
+            user1.setFirstName("Peter");
+            user1.setLastName("Parker");
+            user1.setEmail("pparker@gmail.com");
+            userService.add(user1);
 
-        User user3 = new User();
-        user3.setFirstName("John");
-        user3.setLastName("Wick");
-        user3.setEmail("killthemall@gmail.com");
+            User user2 = new User();
+            user2.setFirstName("Sarah");
+            user2.setLastName("Connor");
+            user2.setEmail("ddayconnor@gmail.com");
+            userService.add(user2);
 
-        User user4 = new User();
-        user4.setFirstName("Mary");
-        user4.setLastName("Jane");
-        user4.setEmail("mjwatson@gmail.com");
+            User user3 = new User();
+            user3.setFirstName("John");
+            user3.setLastName("Wick");
+            user3.setEmail("killthemall@gmail.com");
+            userService.add(user3);
+
+            User user4 = new User();
+            user4.setFirstName("Mary");
+            user4.setLastName("Jane");
+            user4.setEmail("mjwatson@gmail.com");
+            userService.add(user4);
+
+
+        }
 
     }
+
 }
+

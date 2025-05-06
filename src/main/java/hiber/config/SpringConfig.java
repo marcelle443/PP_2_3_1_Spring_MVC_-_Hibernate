@@ -20,6 +20,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
@@ -39,8 +40,8 @@ public class SpringConfig implements WebMvcConfigurer {
     @Bean
     public InternalResourceViewResolver viewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix(env.getProperty("view.prefix"));
-        resolver.setSuffix(env.getProperty("view.suffix"));
+        resolver.setPrefix(env.getProperty("view.prefix")); //("/WEB-INF/views/");
+        resolver.setSuffix(env.getProperty("view.suffix")); //(".jsp");
         return resolver;
     }
 
